@@ -12,17 +12,20 @@ class TextDisplay extends React.Component {
       value: 'Heading\n=======\n\nSub-heading\n-----------\n \n### Another deeper heading\n \nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\nThe rain---not the reign---in\n'
     } //this.state
   } //constructor
+  
   updateView(addedText){
     this.setState({
       value: addedText
     }) //this.setState
   }//updateView
+  
     markedApi(val){
       var markedApi = marked(val, {santize: true});
       return{
         __html: markedApi
       }; //return
     } //markedApi
+  
     render(){
       return (
         <div className="row">
@@ -38,16 +41,19 @@ class TextDisplay extends React.Component {
 } //TextDisplay
 
 class Markdown extends React.Component {
+  
   newData(){
     var typedValue=this.refs.inputValue.value;
     this.props.updateView(typedValue);
   } //newData
+  
   render(){
     return (
       <textarea rows="30" cols="50" ref="inputValue" value={this.props.value} onChange={this.newData.bind(this)} className="form-control" />
     ) //return
   } //render
 } //Markdown
+
 ReactDOM.render(
 <TextDisplay />,
   document.getElementById('root')
