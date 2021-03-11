@@ -1,7 +1,5 @@
 # markdown_language_viewer
 A FreeCodeCamp Project using React.js to create a real-time markdown language viewer
-# Working Application
-https://markdownlang.herokuapp.com/
 
 # Objective:
 Build an app that allows you to write markdown language and Preview your results in real time. 
